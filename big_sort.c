@@ -6,7 +6,7 @@
 /*   By: dmaessen <dmaessen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:55:34 by dmaessen          #+#    #+#             */
-/*   Updated: 2023/04/20 12:08:56 by dmaessen         ###   ########.fr       */
+/*   Updated: 2023/04/20 13:38:02 by dmaessen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,20 @@ void big_sort(t_stack **stacka, t_stack **stackb)
 	int index_bottom;
 	int x;
 	int size;
-	// int buck;
+	int buck;
 
 	index_stack(stacka);
 	size = stack_size(*stacka);
-	// buck = (size / buckets(*stacka));
+	buck = (size / buckets(*stacka));
+	x = 0;
 	while (*stacka)
 	{
-		if (stack_size(*stacka) <= 100)
-			x = scan_b100(*stackb);
-		else
-			x = scan_b500(*stackb);
-		// if (stack_size(*stacka) == size)
-		// 	x = buck;
-		// if (stack_size(*stackb) == buck - 1)
-		// 	x = x + buck;
+		// if (stack_size(*stacka) <= 100)
+		// 	x = scan_b100(*stackb);
+		// else
+		// 	x = scan_b500(*stackb);
+		if (stack_size(*stackb) % buck == 0)
+			x = x + buck;
 		index_top = search_top(*stacka, x);
 		index_bottom = search_bottom(*stacka, x);
 		move_to_b(stacka, stackb, index_top, index_bottom);
@@ -80,8 +79,8 @@ void big_sort(t_stack **stacka, t_stack **stackb)
 			pa(stacka, stackb);
 		}
 	}
-// 	printf("A\n");
-// 	ft_print_stack(*stacka); // to rm
+	// printf("A\n");
+	// ft_print_stack(*stacka); // to rm
 // 	if (isordered(*stacka) == 0)
 //         printf("IN ORDER\n");
 }

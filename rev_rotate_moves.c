@@ -6,7 +6,7 @@
 /*   By: dmaessen <dmaessen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 14:13:37 by dmaessen          #+#    #+#             */
-/*   Updated: 2023/04/20 10:47:06 by dmaessen         ###   ########.fr       */
+/*   Updated: 2023/04/20 13:38:09 by dmaessen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	rrb(t_stack **stackb) // check if stack is NULL?? or 1data ??
 	first->next = (*stackb);
 	(*stackb) = first;
 	last->next = NULL;
-	write(1, "rra\n", 4);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack **stacka, t_stack **stackb) // fix this so doesn't write 3times
