@@ -6,18 +6,18 @@
 #    By: dmaessen <dmaessen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/13 16:14:01 by dmaessen          #+#    #+#              #
-#    Updated: 2023/04/20 11:41:16 by dmaessen         ###   ########.fr        #
+#    Updated: 2023/04/21 13:45:44 by dmaessen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC =  main.c check.c error_free.c lists.c little_sort.c big_sort.c push_moves.c rev_rotate_moves.c rotate_moves.c swap_moves.c index.c \
+SRC =  main.c check.c error_free.c lists.c little_sort.c big_sort2.c big_sort.c push_moves.c rev_rotate_moves.c rotate_moves.c swap_moves.c index.c \
 
 LIBFT = libft/libft.a
 
 CC = cc 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 all: $(NAME)

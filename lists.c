@@ -6,7 +6,7 @@
 /*   By: dmaessen <dmaessen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 15:49:26 by dmaessen          #+#    #+#             */
-/*   Updated: 2023/04/17 16:24:56 by dmaessen         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:31:14 by dmaessen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ t_stack	*lstlast_ps(t_stack *lst)
 void	lstadd_back_ps(t_stack **lst, long long int res)
 {
 	t_stack	*current;
-	t_stack *new;
+	t_stack	*new;
 
-	new = lstnew_ps(res); // check if NULL is returned??
+	new = lstnew_ps(res);
+	if (new == NULL)
+		exit(1);
 	if (*lst == NULL)
 		*lst = new;
 	else

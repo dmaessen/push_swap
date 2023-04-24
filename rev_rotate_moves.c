@@ -6,7 +6,7 @@
 /*   By: dmaessen <dmaessen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 14:13:37 by dmaessen          #+#    #+#             */
-/*   Updated: 2023/04/20 13:38:09 by dmaessen         ###   ########.fr       */
+/*   Updated: 2023/04/21 11:08:57 by dmaessen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ static t_stack	*lst_previouslast(t_stack *lst)
 	return (current);
 }
 
-void	rra(t_stack **stacka) // check if stack is NULL?? or 1data ??
+void	rra(t_stack **stacka)
 {
-	t_stack *first;
-    t_stack *last;
+	t_stack	*first;
+	t_stack	*last;
 
 	first = lstlast_ps(*stacka);
 	last = lst_previouslast(*stacka);
@@ -37,10 +37,10 @@ void	rra(t_stack **stacka) // check if stack is NULL?? or 1data ??
 	write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack **stackb) // check if stack is NULL?? or 1data ??
+void	rrb(t_stack **stackb)
 {
-	t_stack *first;
-    t_stack *last;
+	t_stack	*first;
+	t_stack	*last;
 
 	first = lstlast_ps(*stackb);
 	last = lst_previouslast(*stackb);
@@ -48,11 +48,4 @@ void	rrb(t_stack **stackb) // check if stack is NULL?? or 1data ??
 	(*stackb) = first;
 	last->next = NULL;
 	write(1, "rrb\n", 4);
-}
-
-void	rrr(t_stack **stacka, t_stack **stackb) // fix this so doesn't write 3times
-{
-	rra(stacka);
-	rrb(stackb);
-	write(1, "rrr\n", 4);
 }

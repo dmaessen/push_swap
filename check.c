@@ -6,7 +6,7 @@
 /*   By: dmaessen <dmaessen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 11:59:27 by dmaessen          #+#    #+#             */
-/*   Updated: 2023/04/20 10:52:17 by dmaessen         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:29:43 by dmaessen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,31 +38,29 @@ long long int	atoi_long(const char *str)
 	return (sign * nb);
 }
 
-int isdouble(char **str)
+int	isdouble(t_stack *stacka)
 {
-	int i;
-	int j;
-	int temp;
+	t_stack	*temp;
+	t_stack	*temp2;
 
-	i = 0;
-	while (str[i])
+	temp = stacka;
+	while (temp)
 	{
-		j = i + 1;
-		while (str[j])
+		temp2 = temp->next;
+		while (temp2)
 		{
-			temp = ft_strncmp(str[i], str[j], 10);
-			if (temp == 0)
+			if (temp->data == temp2->data)
 				return (0);
-			j++;
+			temp2 = temp2->next;
 		}
-		i++;
+		temp = temp->next;
 	}
 	return (1);
 }
 
-int isordered(t_stack *stacka)
+int	isordered(t_stack *stacka)
 {
-	t_stack *next;
+	t_stack	*next;
 
 	next = stacka->next;
 	while (next != NULL)
